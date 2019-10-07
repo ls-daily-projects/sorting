@@ -4,21 +4,22 @@
 
 ### Complexity/Big-O
 
-* [How do you assess space complexity?](#q100)
+-   [How do you assess space complexity?](#q100)
 
 ### Recursion
 
-* [How do you keep track of recursion in your head?](#q500)
+-   [How do you keep track of recursion in your head?](#q500)
 
 ### General
 
-* [Both promises and recursion wait for something to resolve. Are they related?](#q200)
-* [Should we use a language's built-in functionality as much as possible?](#q300)
-* [What are the tradeoffs with in-place versus non-in-place sorting solutions?](#q400)
+-   [Both promises and recursion wait for something to resolve. Are they related?](#q200)
+-   [Should we use a language's built-in functionality as much as possible?](#q300)
+-   [What are the tradeoffs with in-place versus non-in-place sorting solutions?](#q400)
 
 ## Questions
 
 <a name="q100"></a>
+
 ### How do you assess space complexity?
 
 Generally speaking, at work and in interviews, people are more interested in
@@ -47,8 +48,8 @@ to complete the algorithm grows proportionately.
 But the _space_ complexity is `O(1)`. The additional space required to complete
 the algorithm was:
 
-* `result`: `O(1)`
-* `v`: `O(1)`
+-   `result`: `O(1)`
+-   `v`: `O(1)`
 
 And neither of those change in size regardless of how big list `data` is. `data`
 could have a zillion elements, and the algorithm would still only require space
@@ -70,9 +71,9 @@ def alg(data):
 
 Here we have more space allocated.
 
-* `result`: `O(1)`
-* `v`: `O(1)`
-* `new_data`: `O(n)`
+-   `result`: `O(1)`
+-   `v`: `O(1)`
+-   `new_data`: `O(n)`
 
 `new_data` gets bigger as `data` gets bigger, so it's `O(n)`. So we have:
 
@@ -141,7 +142,7 @@ So the total space complexity for this algorithm is:
 Again, compare to the `O(1)` space complexity of the initial iterative solution.
 
 In some languages, notably
-[Lisp](https://en.wikipedia.org/wiki/Lisp_(programming_language)) and other
+[Lisp](<https://en.wikipedia.org/wiki/Lisp_(programming_language)>) and other
 [functional programming
 languages](https://en.wikipedia.org/wiki/Functional_programming), you can write
 recursive solutions with `O(1)` space complexity. These languages take advantage
@@ -151,9 +152,10 @@ By coding things correctly, the language can automatically convert your
 recursive solution into an iterative solution. Stock C and Python do not support
 tail call optimization.
 
---------------------------------------------------------------------------
+---
 
 <a name="q200"></a>
+
 ### Both promises and recursion wait for something to resolve. Are they related?
 
 Not really, though they are similar in that particular way.
@@ -165,9 +167,10 @@ Recursion does much more, however. It's great for solving problems that can be
 split into identical subproblems. It can also be used to replace any looping
 construct.
 
---------------------------------------------------------------------------
+---
 
 <a name="q300"></a>
+
 ### Should we use a language's built-in functionality as much as possible?
 
 Yes.
@@ -179,9 +182,10 @@ That said, there might be times you want to write your own versions. Maybe the
 built-in doesn't do exactly what you need. Or maybe you want to rewrite the
 built-in as a learning exercise, for example.
 
---------------------------------------------------------------------------
+---
 
 <a name="q400"></a>
+
 ### What are the tradeoffs with in-place versus non-in-place sorting solutions?
 
 Memory: in-place typically takes less memory since you're reusing the original
@@ -217,9 +221,10 @@ def quicksort(data):
     return quicksort(left) + [pivot] + quicksort(right)
 ```
 
---------------------------------------------------------------------------
+---
 
 <a name="q500"></a>
+
 ### How do you keep track of recursion in your head?
 
 One of the main tricks is to _not_ try to follow the flow of the code.
